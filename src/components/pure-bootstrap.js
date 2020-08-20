@@ -1,8 +1,9 @@
 import React from "react"
+import Styles from "./pure-bootstrap.module.scss"
 
 const PureBootstrap = () => {
     return (
-        <div className="container">
+        <div className={`${Styles.container} container`}>
             <div className="row">
                 <div className="col-sm">Column 1</div>
                 <div className="col-sm">Column 2</div>
