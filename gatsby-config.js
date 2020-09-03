@@ -35,7 +35,14 @@ module.exports = {
         exclude: [`/using-typescript/`],
       }
     },
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://www.netlify.com/blog/index.xml`,
+        name: `SampleBlog`
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

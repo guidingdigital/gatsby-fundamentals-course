@@ -5,6 +5,7 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import PureBootstrap from "../components/pure-bootstrap"
 import ReactBootstrap from "../components/react-bootstrap"
+import ItemList from "../components/itemList"
 
 const IndexPage = () => (
   <Layout>
@@ -19,6 +20,8 @@ const IndexPage = () => (
     <PureBootstrap />
 
     <ReactBootstrap />
+
+    <ItemList />
 
   </Layout>
 )
