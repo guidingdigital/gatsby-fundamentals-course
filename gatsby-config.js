@@ -42,9 +42,36 @@ module.exports = {
         url: `https://www.netlify.com/blog/index.xml`,
         name: `SampleBlog`
       }
+    },
+    {
+      resolve: "gatsby-source-apiserver",
+      options: {
+        url: `https://swapi.dev/api/people/`,
+        method: "get",
+        headers: {
+          "Content-Type": "application/json"
+        },  
+        name: `StarWarsCharacter`,
+        entityLevel: `results`,
+      }
+    },
+    {
+      resolve: "gatsby-source-apiserver",
+      options: {
+        url: `https://swapi.dev/api/films/`,
+        method: "get",
+        headers: {
+          "Content-Type": "application/json"
+        },  
+        name: `StarWarsFilm`,
+        entityLevel: `results`,
+      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+  mapping: {
+    "StarWarsCharacter.films" : "StarWarsFilm.url"
+  }
 }
