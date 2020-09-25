@@ -12,6 +12,15 @@ exports.createPages = async({ graphql, actions}) => {
             }
           }
         }
+        allMarkdownRemark {
+          edges {
+            node {
+              frontmatter {
+                path
+              }
+            }
+          }
+        }
       }
       
     `)
@@ -25,4 +34,14 @@ exports.createPages = async({ graphql, actions}) => {
             }
         })
     })
+
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      createPage({
+          component: path.resolve("./src/templates/blogPostTemplate.js"),
+          path: node.frontmatter.path,
+          context: {
+              id: node.frontmatter.path
+          }
+      })
+  })
 }
